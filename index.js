@@ -282,10 +282,10 @@ window.run = function() {
 	var topLeft = screenToWorld(new THREE.Vector2(0, 0));
 	var bottomRight = screenToWorld(new THREE.Vector2(window.innerWidth, window.innerHeight));
 
-	worldTop = topLeft.y;
-	worldBottom = bottomRight.y;
-	worldleft = topLeft.x;
-	worldRight = bottomRight.x;
+    worldTop = topLeft.y/2;
+    worldBottom = bottomRight.y/2;
+    worldleft = topLeft.x/2;
+    worldRight = bottomRight.x/2;
 	
 	var initialMicrobesCount = Math.random() * 30;
 	// var initialMicrobesCount = 1;

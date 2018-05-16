@@ -116,7 +116,7 @@ function screenToWorld(vec) {
 function addNutrients(pos) {
 	var material = new THREE.MeshBasicMaterial({ color: 0xFF0000 });
 
-	for(var i = 0; i < (Math.random() * 5) + 1; i++) {
+	for(var i = 0; i < (Math.random() * 2) + 1; i++) {
 		var radius = (Math.random() * 0.5) + 0.2;
 		var segments = 32;
 
@@ -125,8 +125,8 @@ function addNutrients(pos) {
 		scene.add(circle);
 
 		var position = new THREE.Vector3(
-			pos.x + (Math.random() * 20) - 10,
-			pos.y + (Math.random() * 20) - 10,
+			pos.x + (Math.random() * 10) - 5,
+			pos.y + (Math.random() * 10) - 5,
 			0);
 
 		circle.translateX(position.x);
@@ -314,15 +314,7 @@ window.run = function() {
 		addMicrobe( vertex, color );
 	}	
 
-	setInterval(function(){
-		if(nutrients.length < microbes.length * 5) {
-			var pos = new THREE.Vector3(
-				Math.random() * Math.abs(worldRight - worldleft) + worldleft,
-				Math.random() * Math.abs(worldTop - worldBottom) + worldBottom,
-				0);
-			addNutrients(pos);
-		}
-	}, 1000 * 5);
+
 };
 },{"./microbe.js":2,"./nutrient.js":6,"three":4,"tween.js":5}],2:[function(require,module,exports){
 var THREE = require('three');
